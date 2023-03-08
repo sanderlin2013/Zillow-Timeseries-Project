@@ -52,7 +52,7 @@ These zip codes were chosen by sorting the zip codes by highest ROI after the 20
 Based on the analysis performed here, we would recommend the following five zip codes as areas to investigate investment options.
 
 
-![Locations of zip codes](Images/google_zip_loc.png) 
+![Locations of zip codes](Images/google_zip_2.png) 
 
 Here is some additional information about these areas:
 
