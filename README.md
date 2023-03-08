@@ -50,6 +50,10 @@ These zip codes were chosen by sorting the zip codes by highest ROI after the 20
 ### Recommendations
 
 Based on the analysis performed here, we would recommend the following five zip codes as areas to investigate investment options.
+
+
+![Locations of zip codes](Images/google_zip_loc.png) 
+
 Here is some additional information about these areas:
 
 - `19145`: This zip code is located in south Philadelphia (like `19148`), whose urban areas have been gentrifying. It contains both urban and suburban housing, along with the [FDR park](https://myphillypark.org/explore/parks/fdr-park/). Additionally, this zip code is right across from the major Philadelphia sports stadiums. As this zip code contains such diverse real estate options, it may be worth further investigation to find exactly which areas would be best to invest in. Alternatively, as prices in this zip code are fairly low, it may be worth investing in properties in different areas of this zip code.
