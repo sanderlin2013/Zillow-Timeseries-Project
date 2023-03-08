@@ -64,9 +64,27 @@ Here is some additional information about these areas:
 
 It is important to note that both `19103` and `19106` ([Rittenhouse Square](https://www.visitphilly.com/things-to-do/attractions/rittenhouse-square-park/) and the [Historic District](https://www.visitphilly.com/articles/philadelphia/must-see-historic-attractions-in-historic-philadelphia/), respectively) models predictions underperformed against the validity data. This indicates that these areas are hot real estate, but may also be more volatile investment. Additionally their buy-in costs are high, making them high risk, high reward - if the markets continue to perform well. `19131`, a neighborhood right next to [Fairmount Park](https://www.visitphilly.com/things-to-do/attractions/fairmount-park/) also out performed the model, and should be further investigated in future analyses. Additionally it could be that future analysis using a linear exponential model would be more predictive for these zip codes.
 
-## Possible Next Steps
+### Possible Next Steps
 
 - Further investigate where in 19145 is the best investment.
 - Keep an eye on south Philadelphia's neighborhoods (including but not exclusively 19145 and 19148).
 - Keep an eye on the neighborhoods directly north of center city (19123 and 19130).
 - Further investigate 19131 - it's current value is low, but seems to be rapidly growing.
+
+## For More Information
+See the full analysis in the [Jupyter Notebook](https://github.com/sanderlin2013/Zillow-Timeseries-Project/blob/main/notebook.ipynb) or review this [presentation](add when it's made).
+
+For additional info, contact Rachel Sanderlin at [sanderlin2013@gmail.com](mailto:sanderlin2013@gmail.com)
+
+## Repository Structure
+
+```
+├── .ipynb_checkpoints/
+├── .gitignore
+├── Images
+├── notebook.ipynb
+├── README.md
+├── notebook.pdf
+├── presentation.pdf
+└── requirements.txt
+```
