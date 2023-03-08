@@ -29,9 +29,9 @@ In the raw data, we had **14,723** rows and **272** columns, but after selecting
 ## Modeling
 
 ### Baseline Models 
-(ADD PRETTY GRAPH HERE) 
+![top 10 philly zipcodes graph](Images/top_10_philly.png)
 
-In the graph above, we see that the `19103` zip code (Rittenhouse Square - a small but very wealthy neighborhood next to center city in Philadelphia) and the `19106` zip code (the historical district of Philadelphia) start and end at unusually high value real estate for the Philadelphia area. The rest of the zip codes (excluding `19131`) seem to hover in the range starting from 100,000 value to 300,000 in 2011, and finish at around 200,000 to 400,000 in 2018.
+In the graph above, we see that the `19103` zip code (Rittenhouse Square - a small but very wealthy neighborhood next to center city in Philadelphia) and the `19106` zip code (the Historical District of Philadelphia) start and end at unusually high value real estate for the Philadelphia area. The rest of the zip codes (excluding `19131`) seem to hover in the range starting from 100,000 value to 300,000 in 2011, and finish at around 200,000 to 400,000 in 2018.
 
 ### SARIMA Models
 (ADD SARIMA MODELS)
