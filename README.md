@@ -1,6 +1,5 @@
-# Predicting Philadelphia Real Esatate Investment: 
-##Top 5 Recommended Zip Codes
-
+# Philadelphia Real Estate Investment: Predicting Best 5 Zip Codes
+ ![Philly Skyline](Images/Philly_skyline_2.jpg)
 
 ## Overview 
 
