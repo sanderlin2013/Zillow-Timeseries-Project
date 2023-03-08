@@ -24,7 +24,7 @@ Zillow is a website that advertises properties for rent or sale all over the USA
 
 ### Dataset Size
 
-In the raw data, we had **14,723** rows and **272** columns, but after selecting the data relevant to the Philadelphia metro area we had **281** rows and **272** original columns. The dataset covers from **April 1996** through **April 2018**, and includes the *median sales information for every month between those years*. 
+In the raw data, we had **14,723** rows and **272** columns, but after selecting the data relevant to the Philadelphia metro area we had **281** rows and **272** original columns. The dataset covers from **April 1996** through **April 2018**, and includes the **median sales information for every month** between those years. 
 
 ## Modeling
 
@@ -66,10 +66,10 @@ It is important to note that both `19103` and `19106` ([Rittenhouse Square](http
 
 ### Possible Next Steps
 
-- Further investigate where in 19145 is the best investment.
+- Further investigate where in `19145` is the best investment.
 - Keep an eye on south Philadelphia's neighborhoods (including but not exclusively 19145 and 19148).
-- Keep an eye on the neighborhoods directly north of center city (19123 and 19130).
-- Further investigate 19131 - it's current value is low, but seems to be rapidly growing.
+- Keep an eye on the neighborhoods directly north of center city (`19123` and `19130`).
+- Further investigate `19131` - it's current value is low, but seems to be rapidly growing.
 
 ## For More Information
 See the full analysis in the [Jupyter Notebook](https://github.com/sanderlin2013/Zillow-Timeseries-Project/blob/main/notebook.ipynb) or review this [presentation](add when it's made).
