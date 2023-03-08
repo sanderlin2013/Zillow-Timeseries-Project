@@ -38,9 +38,10 @@ In the graph above, we see that the `19103` zip code (Rittenhouse Square - a sma
 
 In the graph above, we see a visualization of the training data, validation data, and predicted trend of each zip code. We also see a confidence interval (the gray cone) - we see that for some zip codes, the predicted values are way off, while for others it seems right on point.
 
-In order to compare our models we calculated the RMSE (Root Mean Square Error) of each model, and took the 5 models with the lowest RMSE as our best models, as these are the models who's predictions will have most accurately matched the validation data.
+In order to compare our models we calculated the RMSE (Root Mean Square Error) of each model, and took the 5 models with the lowest RMSE as our best models, as these are the models who's predictions will have most accurately matched the validation data. Finally, we predicted the ROI for our five best models. 
 
-(ADD RMSE GRAPH HERE) 
+![top 5 roi zipcodes](Images/top5_roi.png)
+
 
 ## Conclusion
 ### Summary of Analysis Process
