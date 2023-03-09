@@ -48,6 +48,9 @@ In the graph above, we see a visualization of our original data along with the f
 
 These zip codes were chosen by sorting the zip codes by highest ROI after the 2008 crash. The top ten zip codes were then split into training and validation sets, and modeled in order to predict how the real estate values would change over 3 years. Using the predicted data and the validation data, we then looked at the RMSE for each model, and picked out the models with the lowest RMSE scores as our best modeled zip codes. Finally, we predicted what our models suggested would be the ROI in Jan, 2020 for real estate purchased at the end of the data set (April, 2018).
 
+![table of predicted value increases for our final 5 zip codes](Images/Final Zip Code Table copy_1.pdf)
+
+
 ### Recommendations
 
 Based on the analysis performed here, we would recommend the following five zip codes as areas to investigate investment options.
