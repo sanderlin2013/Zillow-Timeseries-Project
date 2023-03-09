@@ -35,13 +35,12 @@ In the raw data, we had **14,723** rows and **272** columns, but after selecting
 In the graph above, we see that the `19103` zip code (Rittenhouse Square - a small but very wealthy neighborhood next to center city in Philadelphia) and the `19106` zip code (the Historical District of Philadelphia) start and end at unusually high value real estate for the Philadelphia area. The rest of the zip codes (excluding `19131`) seem to hover in the range starting from 100,000 value to 300,000 in 2011, and finish at around 200,000 to 400,000 in 2018.
 
 ### SARIMA Models
-(ADD SARIMA MODELS)
-
-In the graph above, we see a visualization of the training data, validation data, and predicted trend of each zip code. We also see a confidence interval (the gray cone) - we see that for some zip codes, the predicted values are way off, while for others it seems right on point.
 
 In order to compare our models we calculated the RMSE (Root Mean Square Error) of each model, and took the 5 models with the lowest RMSE as our best models, as these are the models who's predictions will have most accurately matched the validation data. Finally, we predicted the ROI for our five best models. 
 
-![top 5 roi zipcodes](Images/top5_roi.png)
+![top 5 forcasted](Images/top_5_linegraph.png)
+
+In the graph above, we see a visualization of our original data along with the forcasted trend (to the right of the red dotted line) for each of our 5 best zip codes. 
 
 
 ## Conclusion
