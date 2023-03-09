@@ -1,22 +1,23 @@
 # Philadelphia Real Estate Investment: Predicting Best 5 Zip Codes
  ![Philly Skyline](Images/Philly_skyline_2.jpg)
 
-## Overview 
+## Summary
 
-Real estate data from [Zillow Research](https://www.zillow.com/research/data/), which offers comprehensive data on zip codes in the Philadelphia metro area (consisting of 281 Philadelphia zip codes) was used for this analysis. The dataset originally included 14,723 zip codes, so preprocessing started by removing the extraneous (non-Philadelphia) zip codes and irrelevant variables. The top ten Philadelphia zip codes were then chosen by sorting the zip codes by highest [ROI](https://www.investopedia.com/terms/r/returnoninvestment.asp) after the 2008 crash. Afterwards, the data was melted to format it for time series modeling. The top ten zip codes were then split into training and validation sets, and modeled in order to predict how the real estate values would change over 3 years. Our final model used [`statsmodels.tsa.statespace.sarimax.SARIMAX`](https://www.statsmodels.org/stable/generated/statsmodels.tsa.statespace.sarimax.SARIMAX.html) to create SARIMA models to forecast real estate values. Prior to this we used the same package to extract the optimal elements needed to make each dataset stationary. The capability to extract these elements was why we chose this specific package. Using the predicted data and the validation data, we looked at the [RMSE](https://www.statology.org/how-to-interpret-rmse/) for each model, and chose models with the lowest RMSE scores as our best modeled zip codes. Finally, we predicted the ROI for real estate purchased  in our final five zip codes. Our final recommended zip codes to invest in, with their expected ROI's in January 2020 are: `19148` - 22%, `19123` - 19%, `19130`- 17%, `19145`-14%, `19428`-13%.
+Real estate data from [Zillow Research](https://www.zillow.com/research/data/), which offers comprehensive data on zip codes in the Philadelphia metro area (consisting of 281 Philadelphia zip codes) was used for this analysis. The dataset originally included 14,723 zip codes, so preprocessing started by removing the extraneous (non-Philadelphia) zip codes and irrelevant variables. The top ten Philadelphia zip codes were then chosen by sorting the zip codes by highest [ROI](https://www.investopedia.com/terms/r/returnoninvestment.asp) after the 2008 crash. Afterwards,  the data was melted to format it for time series modeling. The top ten zip codes were then split into training and validation sets, and modeled in order to predict how the real estate values would change over 3 years. Our final model used [`statsmodels.tsa.statespace.sarimax.SARIMAX`](https://www.statsmodels.org/stable/generated/statsmodels.tsa.statespace.sarimax.SARIMAX.html) to create SARIMA models to forecast real estate values. Prior to this we used the same package to extract the optimal elements needed to make each dataset stationary. The capability to extract these elements was why we chose this specific package. Using the predicted data and the validation data, we looked at the [RMSE](https://www.statology.org/how-to-interpret-rmse/) for each model, and chose models with the lowest RMSE scores as our best modeled zip codes. Finally, we predicted the ROI for real estate purchased  in our final five zip codes. Our final recommended zip codes to invest in, with their expected ROI's in January 2020 are: `19148` (22%), `19123` (19%), `19130` (17%), `19145` (14%), `19428` (13%).
 
 ## Business and Data Understanding
 
-###  Buisness Problem
+###  Business Problem
 
-A **real estate investment firm** centered in Philadelphia reached out to a consultant to help them figure out **"What are the top 5 best zip codes for us to invest in?"**.  The goal of the analysis in this notebook is to answer the stakeholders question by recommending the top 5 zip codes to invest in the Philly Metro area *and* explain the logic behind those recommendations.
+A real estate investment firm centered in Philadelphia reached out to a consultant to help them figure out **"What are the top 5 best zip codes for us to invest in?"**.  The goal of the analysis in this notebook is to answer the stakeholders question by recommending the top 5 zip codes to invest in the Philly Metro area *and* explain the logic behind those recommendations.
+
 
 ## Dataset
 
-The dataset was originally extracted from [Zillow Research](https://www.zillow.com/research/data/). This specific dataset can be found [here](https://github.com/learn-co-curriculum/dsc-phase-4-choosing-a-dataset/tree/main/time-series). 
+The dataset was originally extracted from [Zillow Research](https://www.zillow.com/research/data/). This specific dataset can be found [here](https://github.com/learn-co-curriculum/dsc-phase-4-choosing-a-dataset/tree/main/time-series). The dataset includes **14,723** rows (representing zip codes) and **272** columns, and includes the median sales information for each zip code from April 1996 through April 2018.
 
 ### Limitations of the Dataset
-The goal of this analysis is to find the best zip codes to invest in, but this particular dataset doesn't include enough ancillary information about the datasets to fully grasp (with out further information) why some zip codes are more expensive or have changing housing prices. Additionally, this dataset provides the median monthly housing prices in a zip code. Using the median monthly value also removed some of the granularity of the dataset, which may have enabled us to create more accurate models.  
+The goal of this analysis is to find the best zip codes to invest in, but this particular dataset doesn't include enough ancillary information about the datasets to fully grasp (with out further information) why some zip codes are more expensive or have changing housing prices. Additionally, this dataset provides the median monthly housing prices in a zip code. Using the median monthly price also removed some of the granularity of the dataset, which may have enabled us to create more accurate models.  
 
 ### Why We Used This Dataset
 
@@ -24,11 +25,11 @@ Zillow is a website that advertises properties for rent or sale all over the USA
 
 ### Dataset Size
 
-In the raw data, we had **14,723** rows and **272** columns, but after selecting the data relevant to the Philadelphia metro area we had **281** rows and **272** original columns. The dataset covers from **April 1996** through **April 2018**, and includes the **median sales information for every month** between those years. 
+In the raw data, we had **14,723** rows and **272** columns, but after selecting the data relevant to the Philadelphia metro area we had **281** rows and **272** original columns. The dataset covers from April 1996 through April 2018, and includes the median sales information for every month between those years. 
 
 ## Modeling
 
-### Baseline Models 
+### Initial Visualization
 ![top 10 philly zipcodes graph](Images/top_10_philly.png)
 
 In the graph above, we see that the `19103` zip code (Rittenhouse Square - a small but very wealthy neighborhood next to center city in Philadelphia) and the `19106` zip code (the Historical District of Philadelphia) start and end at unusually high value real estate for the Philadelphia area. The rest of the zip codes (excluding `19131`) seem to hover in the range starting from 100,000 value to 300,000 in 2011, and finish at around 200,000 to 400,000 in 2018.
@@ -67,7 +68,7 @@ Here is some additional information about these areas:
 
 - `19130`: This zip code is also located right above center city, which is the area known for the most expensive real estate, to the west of 19123. It's ROI could be due to it's proximity to center city.
 
-It is important to note that both `19103` and `19106` ([Rittenhouse Square](https://www.visitphilly.com/things-to-do/attractions/rittenhouse-square-park/) and the [Historic District](https://www.visitphilly.com/articles/philadelphia/must-see-historic-attractions-in-historic-philadelphia/), respectively) models predictions underperformed against the validity data. This indicates that these areas are hot real estate, but may also be more volatile investment. Additionally their buy-in costs are high, making them high risk, high reward - if the markets continue to perform well. `19131`, a neighborhood right next to [Fairmount Park](https://www.visitphilly.com/things-to-do/attractions/fairmount-park/) also out performed the model, and should be further investigated in future analyses. Additionally it could be that future analysis using a linear exponential model would be more predictive for these zip codes.
+It is important to note that both `19103` and `19106` ([Rittenhouse Square](https://www.visitphilly.com/things-to-do/attractions/rittenhouse-square-park/) and the [Historic District](https://www.visitphilly.com/articles/philadelphia/must-see-historic-attractions-in-historic-philadelphia/), respectively) models predictions *were lower* than the actual home prices. This indicates that these areas are hot real estate, but may also be more volatile investment. Additionally their buy-in costs are high, making them high risk, high reward - if the markets continue to perform well. `19131`, a neighborhood right next to [Fairmount Park](https://www.visitphilly.com/things-to-do/attractions/fairmount-park/) also out performed the model, and should be further investigated in future analyses. Additionally it may be more accurate to model these upward trends in housing prices as an exponential function rather than a time series.
 
 ### Possible Next Steps
 
