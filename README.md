@@ -88,7 +88,7 @@ For additional info, contact Rachel Sanderlin at [sanderlin2013@gmail.com](mailt
 
 ```
 ├── .ipynb_checkpoints/
-├── Images
+├── Images/
 ├── .gitignore
 ├── README.md
 ├── notebook.ipynb
