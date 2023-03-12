@@ -80,7 +80,7 @@ It is important to note that both `19103` and `19106` ([Rittenhouse Square](http
 - Further investigate `19131` - it's current value is low, but seems to be rapidly growing.
 
 ## For More Information
-See the full analysis in the [Jupyter Notebook](https://github.com/sanderlin2013/Zillow-Timeseries-Project/blob/main/notebook.ipynb) or review this [presentation](add when it's made).
+See the full analysis in the [Jupyter Notebook](https://github.com/sanderlin2013/Zillow-Timeseries-Project/blob/main/notebook.ipynb) or review this [presentation](https://github.com/sanderlin2013/Zillow-Timeseries-Project/blob/main/presentation.pdf).
 
 For additional info, contact Rachel Sanderlin at [sanderlin2013@gmail.com](mailto:sanderlin2013@gmail.com)
 
@@ -88,10 +88,10 @@ For additional info, contact Rachel Sanderlin at [sanderlin2013@gmail.com](mailt
 
 ```
 ├── .ipynb_checkpoints/
-├── .gitignore
 ├── Images
-├── notebook.ipynb
+├── .gitignore
 ├── README.md
+├── notebook.ipynb
 ├── notebook.pdf
 ├── presentation.pdf
 └── requirements.txt
